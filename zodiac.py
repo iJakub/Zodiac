@@ -77,7 +77,7 @@ def main():
             (surname[0] + surname2[0] + name)]
         ns.extend(s2)
 
-    if (name2 != "") or (surname2 != ""):
+    if (name2 != "") and (surname2 != ""):
         ns2 = [
             (name + name2 + surname + surname2),
             (surname + surname2 + name + name2),
@@ -101,10 +101,13 @@ def main():
         url = ("http://" + item.lower() + extension)
         print(f"Checking : {url}")
         try:
-            requests.get(url)
-            websites.append(url)
+            r = requests.get(url)
+            if r.status_code != 404:
+                    websites.append(url)
+
         except requests.exceptions.ConnectionError:
             pass
+
     os.system('cls||clear')
     print(logo + "Possible owner of these websites:\n")
 
