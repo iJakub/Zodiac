@@ -25,9 +25,9 @@ python zodiac.py
 ## Versions
 
 * 1.1
-	* New logo (ASCII art)
+    * New logo (ASCII art)
     * Refactoring
-    * Custom extension
+    * Added custom websites extensions
 * 1.0
     * Initial Release
 
