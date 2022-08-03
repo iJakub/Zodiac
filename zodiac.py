@@ -5,27 +5,34 @@ import time
 import os
 
 logo = ("""
-      |
-     _|_ Zodiac
- ___/_|_\___
-    \_|_/
-      |
-      |
+          /
+      __ /
+     /  /\ 
+  --|--/--|--
+     \/__/ 
+     /     Zodiac
+    /
 
 
 """)
-print(logo + "Enter data (If you don't know something, leave it empty)\n")
+print(logo + "Enter data (If you don't know something, leave it blank)\n")
 
 
 def main():
-    name = input("name: ")
-    name2 = input("2nd name: ")
-    surname = input("surname: ")
-    surname2 = input("2nd surname: ")
+    name = input("name: ").strip()
+    name2 = input("2nd name: ").strip()
+    surname = input("surname: ").strip()
+    surname2 = input("2nd surname: ").strip()
 
     if (name == "") or (surname == ""):
         print("\nYou must enter name and surname\n")
         main()
+
+    extension = input("\nwebsite extension: ").strip()
+    if extension == "":
+        extension = ".com"
+    if ("." in extension) == False:
+        extension = "." + extension
 
     ns = [
         (surname),
@@ -91,7 +98,7 @@ def main():
     websites = []
 
     for item in ns:
-        url = ("http://" + item.lower() + ".com")
+        url = ("http://" + item.lower() + extension)
         print(f"Checking : {url}")
         try:
             requests.get(url)
