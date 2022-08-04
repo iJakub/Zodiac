@@ -3,7 +3,7 @@
 
 ## Description
 
-Simple script to quickly find a person's website with
+Simple script to quickly find a person's website using
 * Name **(required)**
 * Surname **(required)**
 * Second Name
