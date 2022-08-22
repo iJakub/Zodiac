@@ -25,7 +25,7 @@ python zodiac.py
 
 ## Versions
 
-* 1.2
+* 1.2 (current)
 	* Refactoring
 	* Added search of websites using nickname
 * 1.1
