@@ -8,6 +8,7 @@ Simple script to quickly find a person's website using
 * Surname **(required)**
 * Second Name
 * Second Surname
+* Nickname
 
 
 ## Executing
@@ -24,10 +25,12 @@ python zodiac.py
 
 ## Versions
 
+* 1.2
+	* Refactoring
+	* Added search of websites using nickname
 * 1.1
     * New logo (ASCII art)
     * Refactoring
-    * Added custom websites extensions
+    * Added custom website extensions
 * 1.0
     * Initial Release
-
