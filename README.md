@@ -10,6 +10,7 @@ Simple script to quickly find a person's website using
 * Second Surname
 * Nickname
 
+Using this data, the script is able to create over 120 urls that may belong to the person you are interested in.
 
 ## Executing
 
