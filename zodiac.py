@@ -23,6 +23,7 @@ def main():
     name2 = input("2nd name: ").strip()
     surname = input("surname: ").strip()
     surname2 = input("2nd surname: ").strip()
+    nickname = input("nickname: ").strip()
 
     if (name == "") or (surname == ""):
         print("\nYou must enter name and surname\n")
@@ -34,7 +35,7 @@ def main():
     if ("." in extension) == False:
         extension = "." + extension
 
-    ns = [
+    list = [
         (surname),
         (name + surname),
         (surname + name),
@@ -46,7 +47,7 @@ def main():
         (surname + name[0])]
         
     if (name2 != ""):
-        n2 = [
+        list.extend([
             (name + name2 + surname),
             (surname + name + name2),
             (name + "-" +  name2 + "-" +  surname),
@@ -57,11 +58,10 @@ def main():
             (name[0] + name2 + surname),
             (surname[0] + name + name2),
             (name[0] + name2[0] + surname),
-            (surname + name[0] + name2[0])] 
-        ns.extend(n2)
+            (surname + name[0] + name2[0])])
 
     if (surname2 != ""):
-        s2 = [
+        list.extend([
             (surname + surname2),
             (name + surname + surname2),
             (surname + surname2 + name),
@@ -74,11 +74,10 @@ def main():
             (name[0] + surname + surname2),
             (surname[0] + surname2 + name),
             (name + surname[0] + surname2[0]),
-            (surname[0] + surname2[0] + name)]
-        ns.extend(s2)
+            (surname[0] + surname2[0] + name)])
 
     if (name2 != "") and (surname2 != ""):
-        ns2 = [
+        list.extend([
             (name + name2 + surname + surname2),
             (surname + surname2 + name + name2),
             (name + "-" + name2 + "-" + surname + "-" + surname2),
@@ -90,14 +89,129 @@ def main():
             (surname + surname2 + name[0] + name2[0]),
             (surname[0] + surname2[0] + name + name2),
             (name + name2[0] + surname[0] + surname2[0]),
-            (surname + surname2[0] + name[0] + name2[0])]
-        ns.extend(ns2)
+            (surname + surname2[0] + name[0] + name2[0])])
+    
+    if (nickname != ""):
+        list.extend([
+            (nickname),
+            (nickname + name),
+            (nickname + surname),
+            (name + nickname),
+            (surname + nickname),
+            (nickname + name + surname),
+            (nickname + surname + name),
+            (name + nickname + surname),
+            (surname + nickname + name),
+            (name + surname + nickname),
+            (surname + name + nickname),
+            (nickname + "-" + name),
+            (nickname + "-" + surname),
+            (name + "-" + nickname),
+            (surname + "-" + nickname),
+            (nickname + "-" + name + "-" + surname),
+            (nickname + "-" + surname + "-" + name),
+            (name + "-" + nickname + "-" + surname),
+            (surname + "-" + nickname + "-" + name),
+            (name + "-" + surname + "-" + nickname),
+            (surname + "-" + name + "-" + nickname),
+            (nickname + name[0]),
+            (nickname + surname[0]),
+            (name[0] + nickname),
+            (surname[0] + nickname),
+            (nickname + name[0] + surname),
+            (nickname + surname[0] + name), 
+            (name[0] + nickname + surname),
+            (surname[0] + nickname + name),
+            (name[0] + surname + nickname),
+            (surname[0] + name + nickname),
+            (nickname + name + surname[0]),
+            (nickname + surname + name[0]),
+            (name + nickname + surname[0]),
+            (surname + nickname + name[0]),
+            (name + surname[0] + nickname),
+            (surname + name[0] + nickname),
+            (name[0] + surname[0] + nickname),
+            (surname[0] + name[0] + nickname),
+            (name[0] + nickname + surname[0]),
+            (surname[0] + nickname + name[0]),
+            (nickname + name[0] + surname[0]),
+            (nickname + surname[0] + name[0])])
 
+    if (nickname != "") and (name2 != ""):
+        list.extend([
+            (name + name2 + nickname),
+            (nickname + name + name2),
+            (nickname + name + name2 + surname),
+            (nickname + surname + name + name2),
+            (name + name2 + nickname + surname),
+            (surname + nickname + name + name2),
+            (name + name2 + surname + nickname),
+            (surname + name + name2 + nickname),
+            (name +"-" + name2 +"-" + nickname),
+            (nickname +"-" + name +"-" + name2),
+            (nickname + "-" + name + "-" + name2 + "-" + surname),
+            (nickname + "-" + surname + "-" + name + "-" + name2),
+            (name + "-" + name2 + "-" + nickname + "-" + surname),
+            (surname + "-" + nickname + "-" + name + "-" + name2),
+            (name + "-" + name2 + "-" + surname + "-" + nickname),
+            (surname + "-" + name + "-" + name2 + "-" + nickname),
+            (nickname + name[0] + name2[0] + surname[0]),
+            (nickname + surname[0] + name[0] + name2[0]),
+            (name[0] + name2[0] + nickname + surname[0]),
+            (surname[0] + nickname + name[0] + name2[0]),
+            (name[0] + name2[0] + surname[0] + nickname),
+            (surname[0] + name[0] + name2[0] + nickname)])
+    
+    if (nickname != "") and (surname2 != ""):
+        list.extend([
+            (surname + surname2 + nickname),
+            (nickname + surname + surname2),
+            (nickname + name + surname + surname2),
+            (nickname + surname + surname2 + name),
+            (name + nickname + surname + surname2),
+            (surname + surname2 + nickname + name),
+            (name + surname + surname2 + nickname),
+            (surname + surname2 + name + nickname),
+            (surname + "-" + surname2 + "-" + nickname),
+            (nickname + "-" + surname + "-" + surname2),
+            (nickname + "-" + name + "-" + surname + "-" + surname2),
+            (nickname + "-" + surname + "-" + surname2 + "-" + name),
+            (name + "-" + nickname + "-" + surname + "-" + surname2),
+            (surname + "-" + surname2 + "-" + nickname + "-" + name),
+            (name + "-" + surname + "-" + surname2 + "-" + nickname),
+            (surname + "-" + surname2 + "-" + name + "-" + nickname),
+            (nickname + name[0] + surname[0] + surname2[0]),
+            (nickname + surname[0] + surname2[0] + name[0]),
+            (name[0] + nickname + surname[0] + surname2[0]),
+            (surname[0] + surname2[0] + nickname + name[0]),
+            (name[0] + surname[0] + surname2[0] + nickname),
+            (surname[0] + surname2[0] + name[0] + nickname)])
+
+    if (nickname != "") and (name2 != "") and (surname2 != ""):
+        list.extend([
+            (nickname + name + name2 + surname + surname2),
+            (nickname + surname + surname2 + name + name2),
+            (name + name2 + nickname + surname + surname2),
+            (surname + surname2 + nickname + name + name2),
+            (name + name2 + surname + surname2 + nickname),
+            (surname + surname2 + name + name2 + nickname),
+            (nickname + "-" + name + "-" + name2 + "-" + surname + "-" + surname2),
+            (nickname + "-" + surname + "-" + surname2 + "-" + name + "-" + name2),
+            (name + "-" + name2 + "-" + nickname + "-" + surname + "-" + surname2),
+            (surname + "-" + surname2 + "-" + nickname + "-" + name + "-" + name2),
+            (name + "-" + name2 + "-" + surname + "-" + surname2 + "-" + nickname),
+            (surname + "-" + surname2 + "-" + name + "-" + name2 + "-" + nickname),
+            (nickname + name[0] + name2[0] + surname[0] + surname2[0]),
+            (nickname + surname[0] + surname2[0] + name[0] + name2[0]),
+            (name[0] + name2[0] + nickname + surname[0] + surname2[0]),
+            (surname[0] + surname2[0] + nickname + name[0] + name2[0]),
+            (name[0] + name2[0] + surname[0] + surname2[0] + nickname),
+            (surname[0] + surname2[0] + name[0] + name2[0] + nickname)])
 
     print()
     websites = []
 
-    for item in ns:
+    for item in list:
         url = ("http://" + item.lower() + extension)
         print(f"Checking : {url}")
         try:
