@@ -210,7 +210,14 @@ def main():
 
     print()
     websites = []
-
+    
+    output = True 
+    #change to False if you do not want to create output.txt
+    
+    if output == True:
+        if os.path.exists("output.txt") == True:
+            os.remove("output.txt")
+    
     for item in list:
         url = ("http://" + item.lower() + extension)
         print(f"Checking : {url}")
@@ -222,11 +229,13 @@ def main():
         except requests.exceptions.ConnectionError:
             pass
 
-    os.system('cls||clear')
+    os.system("cls||clear")
     print(logo + "Possible owner of these websites:\n")
 
     for item in websites:
-        print(item.lower())     
+        print(item.lower())
+        if output == True:
+            file = open("output.txt", "a").write(item + "\n")
 
 main()
 input()
