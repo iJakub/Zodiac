@@ -10,7 +10,7 @@ Simple script to quickly find a person's website using
 * Second Surname
 * Nickname
 
-Using this data, the script is able to create 150 urls that may belong to the person you are interested in.
+The script is able to create 150 urls that may belong to the person you are interested in.
 
 ## Executing
 
@@ -25,8 +25,9 @@ python zodiac.py
 
 
 ## Versions
-
-* 1.2 (current)
+* 1.3
+	* Added saving results to the **output.txt** file
+* 1.2
 	* Refactoring
 	* Added search of websites using nickname
 * 1.1
