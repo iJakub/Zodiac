@@ -25,7 +25,7 @@ python zodiac.py
 
 
 ## Versions
-* 1.3
+* 1.3 (current)
 	* Added saving results to the **output.txt** file
 * 1.2
 	* Refactoring
